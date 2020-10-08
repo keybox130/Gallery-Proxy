@@ -1,0 +1,15 @@
+[submodule "Reviews-Proxy"]
+	path = Reviews-Proxy
+	url = https://github.com/keybox130/Reviews-Proxy.git
+[submodule "Gallery-Service"]
+	path = Gallery-Service
+	url = https://github.com/keybox130/Gallery-Service.git
+[submodule "Reviews-Service"]
+	path = Reviews-Service
+	url = https://github.com/keybox130/Reviews-Service.git
+[submodule "More-Places-Service"]
+	path = More-Places-Service
+	url = https://github.com/keybox130/More-Places-Service.git
+[submodule "Booking-Service"]
+	path = Booking-Service
+	url = https://github.com/keybox130/Booking-Service.git
