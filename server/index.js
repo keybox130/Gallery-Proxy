@@ -7,11 +7,12 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 app.use(cors())
 
-app('/stays/:roomId', express.static(path.join(__dirname, 'public')));
+app.use('/stays/:roomId', express.static(path.join(__dirname, '../public')));
 
 //Photo Gallery
-app.use('/gallery/stays/:roomid',createProxyMiddleware({target: 'http://localhost:3001/', changeOrigin: true}));
-app.use('/gallery/stays',createProxyMiddleware({target: 'http://localhost:3001/', changeOrigin: true}));
+app.use('/gallery/stays/:roomId',createProxyMiddleware({target: 'http://localhost:3001/', changeOrigin: true}));
+
+app.use('/gallery/lists',createProxyMiddleware({target: 'http://localhost:3001/', changeOrigin: true}));
 
 // //Calendar/Booking Component
 // app.use('/calendar/stays/:roomid',createProxyMiddleware({target: 'http://localhost:3002/', changeOrigin: true}));

@@ -214,14 +214,11 @@ class CreateListModal extends React.Component {
   }
 
   postList(ListName) {
-    axios.post('/list', {
+    axios.post('/gallery/lists', {
       title: ListName,
       number: 1,
       tmb_url: this.props.currentStay.photos[0].photo_url,
     })
-      .then((response) => {
-        console.log(response);
-      })
       .catch((error) => {
         console.log(error);
       });
