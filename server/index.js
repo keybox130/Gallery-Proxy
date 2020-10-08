@@ -19,9 +19,9 @@ app.use('/calendar/stays/:roomId',createProxyMiddleware({target: 'http://localho
 // Reviews Component
 app.use('/reviews/stays/:roomId',createProxyMiddleware({target: 'http://localhost:3003/', changeOrigin: true}));
 
-// //More Places Component
-// app.use('/moreplaces/stays/:roomId',createProxyMiddleware({target: 'http://localhost:3004/', changeOrigin: true}));
-// app.use('/moreplaces/stays',createProxyMiddleware({target: 'http://localhost:3004/', changeOrigin: true}));
+//More Places Component
+app.use('/moreplaces/stays',createProxyMiddleware({target: 'http://localhost:3004/', changeOrigin: true}));
+app.use('/moreplaces/favorites',createProxyMiddleware({target: 'http://localhost:3004/', changeOrigin: true}));
 
 
 // App Listen port

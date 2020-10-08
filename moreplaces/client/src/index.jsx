@@ -4,5 +4,5 @@ import App from './components/App.jsx';
 
 ReactDom.render(
   <App />,
-  document.getElementById('app'),
+  document.getElementById('more-places'),
 );

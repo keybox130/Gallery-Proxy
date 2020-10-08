@@ -154,7 +154,7 @@ class App extends React.Component {
   }
 
   getAll() {
-    axios('/stays/')
+    axios('/moreplaces/stays/')
       .then((list) => {
         this.setState({
           listings: list.data,
@@ -164,7 +164,7 @@ class App extends React.Component {
   }
 
   getFavorites() {
-    axios('/favorites/')
+    axios('/moreplaces/favorites/')
       .then((list) => {
         this.setState({
           favorites: list.data,
@@ -174,7 +174,7 @@ class App extends React.Component {
   }
 
   get(roomId) {
-    axios(`/stays/${roomId}`)
+    axios(`/moreplaces/stays/${roomId}`)
       .then((list) => {
         this.setState({
           listings: list.data,
@@ -200,7 +200,7 @@ class App extends React.Component {
   }
 
   updateList(id, count) {
-    axios.put(`/favorites/${id}/${count}`)
+    axios.put(`/moreplaces/favorites/${id}/${count}`)
       .then(() => (
         this.getFavorites()
       ))
@@ -220,7 +220,7 @@ class App extends React.Component {
     const { createModal, imageUrl } = this.state;
     axios({
       method: 'post',
-      url: '/favorites/',
+      url: '/moreplaces/favorites/',
       data: {
         id,
         name,

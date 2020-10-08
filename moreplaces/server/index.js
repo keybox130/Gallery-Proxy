@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app = express();
-const port = 3000;
+const port = 3004;
 const path = require('path');
 const bodyParser = require('body-parser');
 const { createProxyMiddleware } = require('http-proxy-middleware');
@@ -12,7 +12,7 @@ app.use('/api', createProxyMiddleware({ target: 'http://www.example.org', change
 app.use('/', bodyParser.json());
 
 // get All
-app.get('/stays/', (req, res) => {
+app.get('/moreplaces/stays', (req, res) => {
   Listing.find({}).exec((err, data) => {
     if (err) {
       res.status(400).send(err);
@@ -23,7 +23,7 @@ app.get('/stays/', (req, res) => {
   });
 });
 
-app.get('/stays/:roomId', (req, res) => {
+app.get('/moreplaces/stays/:roomId', (req, res) => {
   const { roomId } = req.params;
   Listing.find({ id: roomId }).exec((err, data) => {
     if (err) {
@@ -36,7 +36,7 @@ app.get('/stays/:roomId', (req, res) => {
 });
 
 // get All for list of favorites
-app.get('/favorites/', (req, res) => {
+app.get('/moreplaces/favorites/', (req, res) => {
   Favorites.find({}).exec((err, data) => {
     if (err) {
       res.status(400).send(err);
@@ -47,7 +47,7 @@ app.get('/favorites/', (req, res) => {
   });
 });
 
-app.post('/favorites/', (req, res) => {
+app.post('/moreplaces/favorites/', (req, res) => {
   console.log('Post req.body: ', req.body);
   Favorites.create(req.body, (err, data) => {
     if (err) {
@@ -59,7 +59,7 @@ app.post('/favorites/', (req, res) => {
   });
 });
 
-app.put('/favorites/:id/:count', (req, res) => {
+app.put('/moreplaces/favorites/:id/:count', (req, res) => {
   const { id, count } = req.params;
   Favorites.findOneAndUpdate({ id }, { count }).exec((err, data) => {
     if (err) {
