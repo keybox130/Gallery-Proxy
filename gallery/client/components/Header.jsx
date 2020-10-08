@@ -46,7 +46,7 @@ const SuperHostIcon = styled.div`
 flex-direction:row;
 height: 15px;
 width:10px;
-background-image: url("superHost.png");
+background-image: url("https://imagesfec.s3.amazonaws.com/airbnb/superHost.png");
 background-repeat: no-repeat;
 background-size: 10px;
 margin-right:2px;
