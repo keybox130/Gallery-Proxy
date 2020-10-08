@@ -34,7 +34,7 @@ function getDates(startDate, stopDate) {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = 
+    this.state =
     {
       checkIn: 'Add date',
       checkOut: 'Add date',
@@ -87,13 +87,13 @@ class App extends React.Component {
 
   getRoom() {
     const self = this;
-    axios.get('/stays/3')
+    axios.get('/calendar/stays/3')
       .then((res) => {
         self.setState({ roomData: res.data }, () => self.handleDateSliderMonths());
       })
       .catch((err) => {
         console.log(err);
-      }); 
+      });
   }
 
   handleCalendar() {
@@ -116,7 +116,7 @@ class App extends React.Component {
       const two = one + 1 < 13 ? one + 1 : one + 1 === 13 ? 1 : null;
       const three = one + 2 < 13 ? one + 2 : one + 2 === 13 ? 1 : one + 2 === 14 ? 2 : null;
       this.setState({monthOne: one, monthTwo: two, monthThree: three}, () => console.log(this.state));
-    } else if (add === true) { 
+    } else if (add === true) {
       const one = monthOne + 1 < 13 ? monthOne + 1 : monthOne + 1 === 13 ? 1 : null;
       const two = monthOne + 2 < 13 ? monthOne + 2 : monthOne + 2 === 13 ? 1 : monthOne + 2 === 14 ? 2 : null;
       const three = monthOne + 3 < 13 ? monthOne + 3 : monthOne + 3 === 13 ? 1 : monthOne + 3 === 14 ? 2 : monthOne + 3 === 15 ? 3 : null;
@@ -125,7 +125,7 @@ class App extends React.Component {
       const one = monthOne - 1 >= 1 ? monthOne - 1 : monthOne === 1 ? 12 : null;
       const two = monthTwo - 1 >= 1 ? monthTwo - 1 : monthTwo === 1 ? 12 : null;
       const three = monthThree - 1 >= 1 ? monthThree - 1 : monthThree === 1 ? 12 : null;
-      this.setState({monthOne: one, monthTwo: two, monthThree: three}, () => console.log(this.state)); 
+      this.setState({monthOne: one, monthTwo: two, monthThree: three}, () => console.log(this.state));
     }
   }
 
@@ -508,7 +508,7 @@ class App extends React.Component {
       const { max_guests } = room;
       maxGuests = max_guests;
     }
-    const base = roomData 
+    const base = roomData
       ? <InitialState room={roomData} checkIn={checkIn} checkOut={checkOut} guestTotal={guestTotal} guestModalActive={guestModalActive} adultCount={adultCount} childrenCount={childrenCount} infantCount={infantCount} guestModalHandlers={guestModalHandlers} guestModalToggle={this.handleGuestModal} dateRange={dateRange} prices={prices} handleCalendar={this.handleCalendar} handleButton={this.updateUsedDates} utc={UTC}/>
       : <h1>Loading...</h1>;
     const calendarRender = (roomData && calendarActive)

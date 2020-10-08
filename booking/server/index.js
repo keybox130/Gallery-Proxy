@@ -2,13 +2,13 @@ const path = require('path');
 const express = require('express');
 const db = require('../database');
 
-const port = 3000;
+const port = 3002;
 const app = express();
 
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
 
-app.get('/stays/:stayId', (req, res) => {
-  const data = req.params.stayId;
+app.get('/calendar/stays/:roomId', (req, res) => {
+  const data = req.params.roomId;
   db.getRoomData(data, (err, results) => {
     if (err) {
       console.log(`Err @ [ app.get ] ::: ${err}`);

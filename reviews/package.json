@@ -19,6 +19,7 @@
     "mongo-seeding": "^3.4.1",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.6",
+    "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "styled-components": "^5.2.0",
     "underscore": "^1.11.0"

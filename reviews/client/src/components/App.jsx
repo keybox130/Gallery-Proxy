@@ -155,11 +155,13 @@ class ReviewApp extends React.Component {
 
   componentDidMount() {
     const stayId = Math.ceil(Math.random() * 100);
+    // console.log('Did mount stayId', stayId);
     this.getStay(stayId);
   }
 
   // gets a stay from the server based on id
   getStay(stayId) {
+
     axios.get(`/reviews/stays/:${stayId}`)
       .then((rooms) => {
         this.setState({
