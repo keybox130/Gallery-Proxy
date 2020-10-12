@@ -1,13 +1,24 @@
-# Project Name
+# Vacation Rental - Image Gallery
 
-> Project description
+> This is the Proxy template of a Vacation rental booking website.
+
+> It is lovingly crafted by Emmanuel Mota using the following:
+- Javascript
+- React
+- Node JS
+- Axios
+- Mongo DB
+- Mongoose
+- Styled Components
+>It is deployed using:
+- Amazon AWS EC2
+- Docker
+
+
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/keybox130
 
 ## Table of Contents
 
@@ -17,15 +28,32 @@
 
 ## Usage
 
-> Some usage instructions
+>  Within the gallery folder
+- npm install -g webpack
+- npm install
+- npm run seed
+- npm run seedList
+- npm run react-dev
+- npm run start
+
+>  Within the main folder
+- npm install
+- npm run start
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
+```sh
 - Node 6.13.0
-- etc
-
+- axios
+- body-parser
+- Express
+- mongoose
+- nodemon
+- react
+- react-dom
+- styled-components
+```
 ## Development
 
 ### Installing Dependencies
@@ -33,7 +61,6 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
-npm install
+- npm install
 ```
 
