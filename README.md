@@ -1,4 +1,4 @@
-# Vacation Rental - Image Gallery
+# Vacation Rental - Proxy template
 
 > This is the Proxy template of a Vacation rental booking website.
 
